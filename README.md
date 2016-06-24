@@ -3,11 +3,14 @@ This repo is a playground for testing various Go libraries and playing with conc
 
 ---
 ### Content:
-- ...
+- HTTP Samples:
+
+	- [https TLS server](./http/simple_https.go)
 
 ### Todo list:
 
 
+- logging in Go
 - working with files: read/write/exists
 - aws scripts working S3
 - http samples:h1,h2 client/server samples
