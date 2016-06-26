@@ -18,9 +18,9 @@ import (
 
 	// "golang.org/x/blog/content/context/google"
 	// "golang.org/x/blog/content/context/userip"
+	"github.com/krapivchenkon/golang-sandbox/conc/ctx/google"
+	"github.com/krapivchenkon/golang-sandbox/conc/ctx/userip"
 	"golang.org/x/net/context"
-	"google"
-	"userip"
 )
 
 func main() {

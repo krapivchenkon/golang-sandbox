@@ -12,8 +12,9 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/krapivchenkon/golang-sandbox/conc/ctx/userip"
 	"golang.org/x/net/context"
-	"userip"
+	"log"
 )
 
 // Results is an ordered list of search results.
@@ -27,6 +28,8 @@ type Result struct {
 // Search sends query to Google search and returns the results.
 func Search(ctx context.Context, query string) (Results, error) {
 	// Prepare the Google Search API request.
+	// This API is deprecated
+	// change to use smth different
 	req, err := http.NewRequest("GET", "https://ajax.googleapis.com/ajax/services/search/web?v=1.0", nil)
 	if err != nil {
 		return nil, err
@@ -39,6 +42,9 @@ func Search(ctx context.Context, query string) (Results, error) {
 	// from end-user requests.
 	if userIP, ok := userip.FromContext(ctx); ok {
 		q.Set("userip", userIP.String())
+
+		log.Print("setip:", userIP.String())
+
 	}
 	req.URL.RawQuery = q.Encode()
 
@@ -71,6 +77,7 @@ func Search(ctx context.Context, query string) (Results, error) {
 	})
 	// httpDo waits for the closure we provided to return, so it's safe to
 	// read results here.
+	log.Print(results)
 	return results, err
 }
 
