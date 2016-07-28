@@ -66,9 +66,6 @@ func main() {
 	//for k, v := range val {
 	//  fmt.Println(k, reflect.TypeOf(v))
 	//}
-	fmt.Println(time.Time(val.Created))
-
-	fmt.Println(time.Time(Timestamp(time.Now())).Format(time.RubyDate))
 
 	// marshal sample
 	res1D := &msg{

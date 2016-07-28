@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
@@ -33,3 +34,18 @@ const (
 	red   Color = "RED-COLOR"
 	black Color = "BLACK-COLOR"
 )
+
+
+// Using custom types
+type customslice []string
+
+realslice := []string(customslice{"one", "two"})    // convert from custom type to a basic type
+cs customslice = customslice([]string{"one", "two"}) // convert from a basic type to a custom type
+
+//Using custom types2
+
+type Timestamp time.Time
+
+stmp:=Timestamp(time.Now())
+
+rubyDate:=time.Time(stmp).Format(time.RubyDate)
