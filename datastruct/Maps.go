@@ -23,17 +23,16 @@ func main() {
 	carDealerTown["Southest Auto Mall"] = "Phoenix, AZ"
 	fmt.Println("A1 Auto is located in ", carDealerTown["A1 Auto"])
 
+	dict := make(map[string]string)
 
-	dict := make(map[string] string)
-	
-	val,ok := dict["key1"]
-	
+	val, ok := dict["key1"]
+
 	fmt.Println(val)
-	
+
 	fmt.Println(ok)
-	
+
 	// Check if key exists
-	if _,ok := dict["key1"]; ok {
+	if _, ok := dict["key1"]; ok {
 		fmt.Println("key exists")
 	} else {
 		fmt.Println("key is missing")
@@ -44,8 +43,9 @@ func main() {
 	dict["key3"] = "val3"
 	dict["key4"] = "val4"
 
-	for key,val :=range dict {
-		fmt.Println("Key=",key," Val=",val)
+	for key, val := range dict {
+		fmt.Println("Key=", key, " Val=", val)
 	}
-
+	// remove key from map
+	delete(dict, "key1")
 }
